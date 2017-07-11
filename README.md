@@ -1,0 +1,3 @@
+# README
+
+A web app to track your stocks with social networking elements....
