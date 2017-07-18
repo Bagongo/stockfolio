@@ -10,10 +10,13 @@ end
 gem 'rails', '~> 5.1.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+#jquery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 #auth sys
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem 'stock_quote'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
