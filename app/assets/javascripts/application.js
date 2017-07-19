@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
+//= require spinner_man
 //= require stock
 
 

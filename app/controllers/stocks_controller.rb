@@ -7,10 +7,10 @@ class StocksController < ApplicationController
     end
 
     if @stock
-      render json: @stock
-      #render partial: "lookup"
+      #render json: @stock
+      render partial: "lookup"
     else
-      render head :bad_request
+      render head :ok
     end
 
   end
