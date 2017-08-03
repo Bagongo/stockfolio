@@ -23,6 +23,13 @@
       <strong>Symbol:</strong> <%= @stock.ticker %>
       <strong>Name:</strong> <%= @stock.name %>
       <strong>Last price:</strong> <%= @stock.last_price %>
+      <% if(current_user.can_add_stock?(@stock.ticker)) %>
+        <%= link_to "add to stocks", user_stocks_path(user:current_user, stock_ticker:@stock.ticker, stock_id: @stock.id ? @stock.id : nil), class:"btn btn-xs btn-success", method: :post %>
+      <% else %>
+        <br />
+        <% failed_adding_cause = current_user.stock_already_added?(@stock.ticker) ? "#{@stock.name}" : "10 stocks" %>
+        <span class="label label-default">Stock can't be added cause you already added <%= failed_adding_cause %></span>  
+      <% end %>
     </div>
   <% end %>
 
