@@ -1,5 +1,5 @@
-var init_stock_lookup = function(){
-	$("#stock-lookup-form").on("submit", function(e) {
+var init_friend_lookup = function(){
+	$("#friend-lookup-form").on("submit", function(e) {
 		hideResults();
 		showSpinnner();
 
@@ -12,14 +12,14 @@ var init_stock_lookup = function(){
 	           data: $(this).serialize(), // serializes the form's elements.
 	           success: function(data)
 	           {
-					$("#stock-lookup").replaceWith(data);
+					$("#friend-lookup").replaceWith(data);
 		       		hideSpinner();
-		       		init_stock_lookup();
+		       		init_friend_lookup();
 	           },
 	           error: function(e, xhr, status, error){
 	           		hideSpinner();
-	           		$("#stock-lookup-errors").show();
-					$("#stock-lookup-errors").html("stock was not found!");
+	           		$("#friend-lookup-errors").show();
+					$("#friend-lookup-errors").html("User was not found!");
 				}
 	         });
 
@@ -28,13 +28,13 @@ var init_stock_lookup = function(){
 
 	function hideResults()
 	{
-		$("#stock-lookup-errors").hide();
-		$("#stock-lookup-results").hide();
+		$("#friend-lookup-errors").hide();
+		$("#friend-lookup-results").hide();
 	}
 };
 
 $(document).ready(function(){
-	init_stock_lookup();
+	init_friend_lookup();
 });
 
 
